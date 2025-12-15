@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Bézier Curve Physics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Canvas -->
+        <canvas id="bezierCanvas"></canvas>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <h2>⚙️ Physics Controls</h2>
+            
+            <div class="control-group">
+                <label for="springStiffness">
+                    Spring Stiffness: <span id="springValue">0.15</span>
+                </label>
+                <input type="range" id="springStiffness" min="0.01" max="0.5" step="0.01" value="0.15">
+            </div>
+
+            <div class="control-group">
+                <label for="damping">
+                    Damping: <span id="dampingValue">0.85</span>
+                </label>
+                <input type="range" id="damping" min="0.5" max="0.99" step="0.01" value="0.85">
+            </div>
+
+            <div class="control-group">
+                <label for="tangentLength">
+                    Tangent Length: <span id="tangentLengthValue">40</span>
+                </label>
+                <input type="range" id="tangentLength" min="10" max="100" step="5" value="40">
+            </div>
+
+            <div class="control-group">
+                <label for="tangentCount">
+                    Tangent Count: <span id="tangentCountValue">10</span>
+                </label>
+                <input type="range" id="tangentCount" min="5" max="30" step="1" value="10">
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>🎨 Visualization</h3>
+            
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="showTangents" checked>
+                    Show Tangents
+                </label>
+            </div>
+
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="showControlPoints" checked>
+                    Show Control Points
+                </label>
+            </div>
+
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="enablePhysics" checked>
+                    Enable Physics
+                </label>
+            </div>
+
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="showGradient" checked>
+                    Gradient Colors
+                </label>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>🎮 Presets</h3>
+            <div class="preset-buttons">
+                <button onclick="applyPreset('bouncy')">Bouncy</button>
+                <button onclick="applyPreset('smooth')">Smooth</button>
+                <button onclick="applyPreset('stiff')">Stiff</button>
+                <button onclick="applyPreset('fluid')">Fluid</button>
+            </div>
+
+            <div class="divider"></div>
+
+            <button class="reset-button" onclick="resetSimulation()">🔄 Reset</button>
+
+            <div class="info-panel">
+                <h4>⌨️ Keyboard Shortcuts</h4>
+                <ul>
+                    <li><strong>T</strong> - Toggle Tangents</li>
+                    <li><strong>C</strong> - Toggle Control Points</li>
+                    <li><strong>P</strong> - Toggle Physics</li>
+                    <li><strong>R</strong> - Reset</li>
+                    <li><strong>1-4</strong> - Quick Presets</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Info Display -->
+        <div class="info-display">
+            <h1>🎨 Interactive Bézier Curve</h1>
+            <p>Move your mouse to control the curve • Physics simulation in real-time</p>
+            <div class="fps-counter">FPS: <span id="fps">60</span></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
