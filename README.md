@@ -2,15 +2,14 @@
 
 **Real-time cubic Bézier curves with spring-damper physics, manual mathematical implementation, and interactive controls.**
 
----
-
+**Demo Video:** [Watch here](https://drive.google.com/file/d/1s_UTTAp5_K07g_inghHX4CcOrIOjva_4/view?usp=sharing)
 
 ### Web Version 
 ```bash
 cd /Users/dhruvsharma/Downloads/flam/web
 open index.html
 ```
-Or just **double-click** `index.html` — that's it!
+
 
 ### iOS Version 
 ```bash
@@ -50,8 +49,6 @@ These tangents are:
 - **Normalized** to unit vectors for consistent visual length
 - Displayed as **color-coded arrows** (10 per curve)
 - Calculated using **analytical calculus**, not numerical approximation
-
-
 
 ---
 
@@ -112,12 +109,6 @@ Instead of numerical approximation:
 ❌ tangent ≈ (B(t+ε) - B(t-ε)) / 2ε
 ```
 
-**Why?**
-- More accurate (exact derivative)
-- Better performance (no epsilon calculations)
-- Cleaner mathematics (explicit formula)
-- Educational value (demonstrates calculus)
-- No numerical instability
 
 ### 2. Multiple Curve Segments (Chaining)
 
@@ -130,19 +121,6 @@ Curve 2:              P₀──P₁──P₂──P₃
                                    │
 Curve 3:                          P₀──P₁──P₂──P₃
 ```
-
-**Why?**
-- Creates realistic **rope/ribbon effect**
-- Allows more **complex shapes** than single curve
-- Demonstrates **curve continuity** concepts
-- More visually interesting **wave patterns**
-
-**Why?**
-- Shows curve **flow direction** visually
-- Helps understand **parametric nature** (t parameter)
-- Makes derivative concept more **intuitive**
-- Aesthetically pleasing
-- Educational visualization
 
 ---
 
@@ -223,4 +201,3 @@ This project demonstrates:
 
 **Created by:** Dhruv Sharma  
 **December 2025**
-# B-zier-curve
